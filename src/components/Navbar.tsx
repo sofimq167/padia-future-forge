@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import logoPadia from '../logopadia.png';
 
 const navLinks = [
   { label: 'Inicio', href: '#' },
@@ -28,7 +29,7 @@ export const Navbar = () => {
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2">
-          <span className="font-display text-2xl font-bold gradient-text">PADIA</span>
+          <img src={logoPadia} alt="Logo Padia" className="h-20 w-auto" />
         </a>
 
         {/* Desktop nav */}
@@ -46,11 +47,11 @@ export const Navbar = () => {
         </div>
 
         {/* CTA */}
-        <div className="hidden md:block">
+        {/* <div className="hidden md:block">
           <Button variant="glow" size="sm">
             Únete
           </Button>
-        </div>
+        </div> */}
 
         {/* Mobile menu button */}
         <button
@@ -74,9 +75,9 @@ export const Navbar = () => {
               {link.label}
             </a>
           ))}
-          <Button variant="glow" className="w-full mt-4">
+          {/* <Button variant="glow" className="w-full mt-4">
             Únete
-          </Button>
+          </Button> */}
         </div>
       )}
     </nav>

@@ -1,4 +1,6 @@
 import { Cpu, Users, Lightbulb, GraduationCap } from 'lucide-react';
+// @ts-ignore
+import logoNaranja from '../logonaranja.png';
 
 export const AboutSection = () => {
   return (
@@ -13,7 +15,7 @@ export const AboutSection = () => {
             Conócenos
           </span>
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-            ¿Qué es <span className="gradient-text">PADIA</span>?
+            ¿Qué es <img src={logoNaranja} alt="Logo PADIA Naranja" className="inline h-14 md:h-20 lg:h-24 w-auto align-middle" />?
           </h2>
         </div>
 

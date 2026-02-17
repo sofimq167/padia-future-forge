@@ -37,11 +37,7 @@ export const MissionVisionSection = () => {
               </div>
               
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Formar estudiantes en <span className="text-foreground font-medium">programación</span>, 
-                <span className="text-foreground font-medium"> analítica de datos</span> e 
-                <span className="text-foreground font-medium"> inteligencia artificial</span> mediante 
-                proyectos colaborativos e innovación constante, contribuyendo al desarrollo 
-                tecnológico de nuestra comunidad universitaria.
+                Nuestra misión es explorar, promover y desarrollar habilidades sólidas en nuestros miembros a través de la investigación colaborativa, el aprendizaje continuo y la innovación
               </p>
             </div>
           </div>
@@ -63,10 +59,7 @@ export const MissionVisionSection = () => {
               </div>
               
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Ser un <span className="text-foreground font-medium">semillero referente</span> en 
-                tecnología e impacto académico, formando profesionales capaces de 
-                <span className="text-foreground font-medium"> transformar el futuro digital</span> y 
-                liderar la innovación en Colombia y Latinoamérica.
+                Buscamos convertirnos en un referente local, siendo un espacio de excelencia académica donde se impulsan proyectos innovadores, se fortalecen habilidades técnicas y se establecen alianzas estratégicas con instituciones y empresas del sector tecnológico.
               </p>
             </div>
           </div>

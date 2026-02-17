@@ -30,12 +30,7 @@ export const CTASection = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-padia-orange/10 rounded-full blur-3xl" />
 
       <div className="max-w-4xl mx-auto text-center relative">
-        {/* Icon */}
-        <div className="flex justify-center mb-8">
-          <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-padia-orange to-padia-amber flex items-center justify-center animate-glow-pulse">
-            <Sparkles className="w-10 h-10 text-primary-foreground" />
-          </div>
-        </div>
+        {/* Icon eliminado por solicitud */}
 
         {/* Heading */}
         <h2 className="font-display text-4xl md:text-6xl font-bold mb-6">
@@ -47,16 +42,7 @@ export const CTASection = () => {
           transformando la tecnología en la Universidad San Buenaventura Cali.
         </p>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button variant="glow" size="xl" className="group">
-            Únete a PADIA
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
-          <Button variant="glow-outline" size="xl">
-            Contáctanos
-          </Button>
-        </div>
+        {/* CTA Buttons eliminados por solicitud */}
       </div>
     </section>
   );

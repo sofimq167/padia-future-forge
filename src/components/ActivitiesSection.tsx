@@ -42,7 +42,7 @@ export const ActivitiesSection = () => {
             Nuestras actividades
           </span>
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-            ¿Qué hacemos en <span className="gradient-text">PADIA</span>?
+            ¿Qué hacemos?
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Nos dedicamos a formar profesionales integrales a través de diversas actividades académicas y tecnológicas.

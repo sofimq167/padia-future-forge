@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail, Instagram } from 'lucide-react';
+import logoPadia from '../logopadia.png';
 
 export const Footer = () => {
   return (
@@ -7,7 +8,7 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Logo and info */}
           <div className="text-center md:text-left">
-            <h3 className="font-display text-2xl font-bold gradient-text mb-2">PADIA</h3>
+            <img src={logoPadia} alt="Logo Padia" className="h-20 w-auto mb-2 mx-auto md:mx-0" />
             <p className="text-sm text-muted-foreground">
               Semillero de Programación, Analítica de Datos e IA
             </p>
@@ -18,21 +19,15 @@ export const Footer = () => {
 
           {/* Social links */}
           <div className="flex gap-4">
-            {[
-              { icon: Github, label: 'GitHub' },
-              { icon: Linkedin, label: 'LinkedIn' },
-              { icon: Instagram, label: 'Instagram' },
-              { icon: Mail, label: 'Email' },
-            ].map((social, idx) => (
-              <a
-                key={idx}
-                href="#"
-                className="w-10 h-10 rounded-xl bg-secondary/50 flex items-center justify-center text-muted-foreground hover:text-padia-orange hover:bg-padia-orange/10 transition-all"
-                aria-label={social.label}
-              >
-                <social.icon className="w-5 h-5" />
-              </a>
-            ))}
+            <a
+              href="https://www.instagram.com/padiausb/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-16 h-16 rounded-2xl bg-secondary/50 flex items-center justify-center text-muted-foreground hover:text-padia-orange hover:bg-padia-orange/10 transition-all"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-10 h-10" />
+            </a>
           </div>
         </div>
 

@@ -1,4 +1,6 @@
 import { Button } from '@/components/ui/button';
+import gatoImg from '../gato.png';
+import logoNaranja from '../logonaranja.png';
 import { DataSphere } from './DataSphere';
 import { Sparkles, ChevronDown } from 'lucide-react';
 
@@ -28,12 +30,14 @@ export const HeroSection = () => {
           <span className="text-sm text-muted-foreground">Universidad San Buenaventura Cali</span>
         </div>
 
-        {/* Main title */}
-        <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-bold mb-6 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-          <span className="text-foreground">Semillero</span>
-          <br />
-          <span className="gradient-text glow-text">PADIA</span>
-        </h1>
+        {/* Main title con imagen */}
+        <div className="flex flex-col items-center justify-center mb-6 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+          <span className="font-display text-6xl md:text-8xl lg:text-9xl font-bold text-foreground">Semillero</span>
+          <div className="flex items-center gap-4 mt-2">
+            <img src={logoNaranja} alt="Logo PADIA Naranja" className="h-20 md:h-32 lg:h-40 w-auto" />
+            <img src={gatoImg} alt="Gato PADIA" className="h-16 md:h-24 lg:h-32 w-auto" />
+          </div>
+        </div>
 
         {/* Subtitle */}
         <p className="text-lg md:text-xl text-muted-foreground mb-4 font-light tracking-wide animate-fade-in" style={{ animationDelay: '0.4s' }}>
@@ -55,12 +59,12 @@ export const HeroSection = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
-          <Button variant="glow" size="xl">
+          {/* <Button variant="glow" size="xl">
             Únete al semillero
-          </Button>
-          <Button variant="glow-outline" size="xl">
+          </Button> */}
+          {/* <Button variant="glow-outline" size="xl">
             Conoce más
-          </Button>
+          </Button> */}
         </div>
       </div>
 
