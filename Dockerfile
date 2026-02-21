@@ -20,8 +20,9 @@ RUN npm run build
 # Use nginx for serving static files
 FROM nginx:1.25-alpine AS production
 
-# Copy built files from build stage
-COPY --from=base /app/dist /usr/share/nginx/html
+# Copy built files from build stage into /padia to serve at /padia/
+RUN mkdir -p /usr/share/nginx/html/padia
+COPY --from=base /app/dist /usr/share/nginx/html/padia
 
 # Copy custom nginx config if needed
 # COPY nginx.conf /etc/nginx/nginx.conf
