@@ -24,8 +24,8 @@ FROM nginx:1.25-alpine AS production
 RUN mkdir -p /usr/share/nginx/html/padia
 COPY --from=base /app/dist /usr/share/nginx/html/padia
 
-# Copy custom nginx config if needed
-# COPY nginx.conf /etc/nginx/nginx.conf
+# Copy custom nginx config for SPA rewrite
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
