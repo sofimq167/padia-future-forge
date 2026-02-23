@@ -19,6 +19,105 @@ export const AboutSection = () => {
           </h2>
         </div>
 
+        {/* Integrantes */}
+        <div className="mt-20">
+          <h3 className="font-display text-2xl md:text-3xl font-bold mb-8 text-center text-padia-orange">Integrantes</h3>
+          {(() => {
+            const members = [
+              { name: "Carlos Giovanny Hidalgo Suarez", role: "Director del semillero", linkedin: "https://www.linkedin.com/in/giovanny-hidalgo-suarez-95711b1a5/" },
+              { name: "Mariana Cruz", role: "Lider de la 1era celula del Semillero", linkedin: "https://www.linkedin.com/in/mariana-cruz-53a8531b0/" },
+              { name: "Sofia Valencia", role: "Lider de la 2da celula del Semillero", linkedin: "https://www.linkedin.com/in/sofia-valencia-solano-66022a345/" },
+              { name: "Lilian Estefania Maradiago Correa", linkedin: "https://www.linkedin.com/in/lilian-estefania-maradiago-correa-40b423244/" },
+              { name: "Valeria Rudas Ruiz", linkedin: "https://www.linkedin.com/in/valeria-rudas-ruiz-941a0715b/" },
+              { name: "Juan Sebastián Dosman Bastidas", linkedin: "https://www.linkedin.com/in/sebastiandosman/" },
+              { name: "Gustavo Adolfo Camargo Pineda", linkedin: "https://www.linkedin.com/in/gustavoadolfocamargopineda/" },
+              { name: "Dillan Alexander Asprilla Sánchez", linkedin: "https://www.linkedin.com/in/dillanasprilla/" },
+              { name: "Carlos Andrés Serrato Echeverry", linkedin: "https://www.linkedin.com/in/carlos-andres-serrato-echeverry/" },
+              { name: "Nicolas Ramirez Villota", linkedin: "https://www.linkedin.com/in/nicolasdlp/" },
+              { name: "Juan David Díaz Cerón", linkedin: "https://www.linkedin.com/in/juan-david-díaz-cerón-272416265/" },
+              { name: "Jhonatan Andrés Ortega Caicedo" },
+              { name: "Valerie Sofia Olave Pineda", linkedin: "https://www.linkedin.com/in/valerie-olave-3a1929350/" },
+              { name: "Natalia Giraldo Amador", linkedin: "https://www.linkedin.com/in/natalia-giraldo-432076256/" },
+              { name: "Sofia Moreno Quintero", linkedin: "https://www.linkedin.com/in/sofia-moreno-3a3249272/" },
+              { name: "Juan Pablo Bustamante Bermúdez", linkedin: "https://www.linkedin.com/in/jpbustamanteb/" },
+              { name: "Kevin Alexis López Camacho", linkedin: "https://www.linkedin.com/in/kevin-lópez-7a19b8369/" },
+              { name: "Bylen Yesid Naspiran Realpe", linkedin: "https://www.linkedin.com/in/bylenyesidnaspiranrealpe/" },
+              { name: "Maria José Ramirez Montero", linkedin: "https://www.linkedin.com/in/maria-jose-ramirez-montero-8b45052b3/" },
+              { name: "Nicolas Hernandez Rodriguez" },
+              { name: "Samuel Vargas Valderruten" },
+              { name: "Fernanda Elizabeth Muñoz Cháves" },
+              { name: "Valeria Becerra Rendón" },
+              { name: "Samuel Mejia Chavarriaga" },
+              { name: "Sofía Acosta Escobar" },
+            ];
+            const topMembers = members.slice(0, 3);
+            const restMembers = members.slice(3);
+            // Group the rest in arrays of 3 or 4
+            const grouped = [];
+            for (let i = 0; i < restMembers.length; i += 4) {
+              grouped.push(restMembers.slice(i, i + 4));
+            }
+            return (
+              <>
+                {/* Top row */}
+                <div className="flex justify-center gap-8 mb-8 flex-wrap">
+                  {topMembers.map((member, idx) => (
+                    <div
+                      key={idx}
+                      className="bg-neutral-900 rounded-xl px-8 py-6 flex flex-col items-center w-[250px] h-[150px] border border-neutral-700 group"
+                      style={{ boxShadow: '0 4px 24px 0 rgba(255,140,0,0.18)' }}
+                    >
+                      <span className="font-semibold text-lg text-white text-center mb-1">{member.name}</span>
+                      {member.role && (
+                        <span className="text-xs text-padia-orange text-center mb-2">{member.role}</span>
+                      )}
+                      <a
+                        href={member.linkedin ? member.linkedin : undefined}
+                        target={member.linkedin ? "_blank" : undefined}
+                        rel={member.linkedin ? "noopener noreferrer" : undefined}
+                        className="flex items-center gap-1 mt-2 text-padia-orange hover:text-padia-orange/80"
+                        aria-label={`LinkedIn de ${member.name}`}
+                        style={!member.linkedin ? { pointerEvents: 'none', cursor: 'default' } : {}}
+                      >
+                        <img src="/icons8-linkedin.svg" alt="LinkedIn" className={`w-5 h-5${!member.linkedin ? ' opacity-40' : ''}`} />
+                        <span className="sr-only">LinkedIn</span>
+                      </a>
+                    </div>
+                  ))}
+                </div>
+                {/* Rest of members in rows of 3 or 4 */}
+                {grouped.map((group, gidx) => (
+                  <div key={gidx} className="flex justify-center gap-8 mb-6 flex-wrap">
+                    {group.map((member, idx) => (
+                      <div
+                        key={idx}
+                        className="bg-neutral-900 rounded-xl px-8 py-4 flex flex-col items-center w-[250px] h-[120px] border border-neutral-700 group"
+                        style={{ boxShadow: '0 4px 24px 0 rgba(255,140,0,0.13)' }}
+                      >
+                        <span className="font-semibold text-lg text-white text-center mb-1">{member.name}</span>
+                        {member.role && (
+                          <span className="text-xs text-padia-orange text-center mb-2">{member.role}</span>
+                        )}
+                        <a
+                          href={member.linkedin ? member.linkedin : undefined}
+                          target={member.linkedin ? "_blank" : undefined}
+                          rel={member.linkedin ? "noopener noreferrer" : undefined}
+                          className="flex items-center gap-1 mt-2 text-padia-orange hover:text-padia-orange/80"
+                          aria-label={`LinkedIn de ${member.name}`}
+                          style={!member.linkedin ? { pointerEvents: 'none', cursor: 'default' } : {}}
+                        >
+                          <img src="/icons8-linkedin.svg" alt="LinkedIn" className={`w-5 h-5${!member.linkedin ? ' opacity-40' : ''}`} />
+                          <span className="sr-only">LinkedIn</span>
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </>
+            );
+          })()}
+        </div>
+
         {/* Main content card */}
         <div className="glass-card p-8 md:p-12 glow-border relative overflow-hidden">
           {/* Decorative corner */}

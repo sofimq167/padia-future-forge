@@ -1,6 +1,4 @@
 import { Button } from '@/components/ui/button';
-import gatoImg from '../gato.png';
-import logoNaranja from '../logonaranja.png';
 import { DataSphere } from './DataSphere';
 import { Sparkles, ChevronDown } from 'lucide-react';
 
@@ -30,14 +28,17 @@ export const HeroSection = () => {
           <span className="text-sm text-muted-foreground">Universidad San Buenaventura Cali</span>
         </div>
 
-        {/* Main title con imagen */}
-        <div className="flex flex-col items-center justify-center mb-6 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-          <span className="font-display text-6xl md:text-8xl lg:text-9xl font-bold text-foreground">Semillero</span>
-          <div className="flex items-center gap-4 mt-2">
-            <img src={logoNaranja} alt="Logo PADIA Naranja" className="h-20 md:h-32 lg:h-40 w-auto" />
-            <img src={gatoImg} alt="Gato PADIA" className="h-16 md:h-24 lg:h-32 w-auto" />
-          </div>
-        </div>
+        {/* Main title */}
+        <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-bold mb-6 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+          <span className="text-foreground">Semillero</span>
+          <br />
+          <img 
+            src="/logonaranja.png" 
+            alt="Logo Padia" 
+            className="inline-block align-middle h-[1.3em] md:h-[1.7em] lg:h-[1.3em] mx-2" 
+            style={{ maxHeight: '1.3em', verticalAlign: 'middle' }}
+          />
+        </h1>
 
         {/* Subtitle */}
         <p className="text-lg md:text-xl text-muted-foreground mb-4 font-light tracking-wide animate-fade-in" style={{ animationDelay: '0.4s' }}>
