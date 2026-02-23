@@ -20,11 +20,11 @@ RUN npm run build
 # Use nginx for serving static files
 FROM nginx:1.25-alpine AS production
 
-# Copy built files from build stage
+# Copy built files from build stage into web root to serve at /
 COPY --from=base /app/dist /usr/share/nginx/html
 
-# Copy custom nginx config if needed
-# COPY nginx.conf /etc/nginx/nginx.conf
+# Copy custom nginx config for SPA rewrite
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
