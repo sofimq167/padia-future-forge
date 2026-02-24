@@ -2,7 +2,7 @@ import { ExternalLink, Github } from 'lucide-react';
 
 const projects = [
   {
-    title: 'Sistema de Predicción',
+    title: 'Sistema de Predicciónes',
     description: 'Modelo de machine learning para predicción de deserción estudiantil utilizando técnicas avanzadas de IA.',
     technologies: ['Python', 'TensorFlow', 'Pandas'],
     status: 'En desarrollo',
