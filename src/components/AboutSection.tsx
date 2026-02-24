@@ -4,7 +4,7 @@ import logoNaranja from '../logonaranja.png';
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="py-24 px-4 relative">
+    <section id="about" className="pt-24 pb-0 px-4 relative">
       {/* Background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-padia-orange/5 rounded-full blur-3xl" />
       
@@ -12,21 +12,72 @@ export const AboutSection = () => {
         {/* Section header */}
         <div className="text-center mb-16">
           <span className="text-padia-orange font-display text-sm tracking-widest uppercase mb-4 block">
-            Conócenos
+          
           </span>
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
             ¿Qué es <img src={logoNaranja} alt="Logo PADIA Naranja" className="inline h-14 md:h-20 lg:h-24 w-auto align-middle" />?
           </h2>
         </div>
+        <div className="glass-card p-8 md:p-12 glow-border relative overflow-hidden">
+          {/* Decorative corner */}
+          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-padia-orange/10 to-transparent" />
+          
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                <span className="text-foreground font-semibold">PADIA</span>
+                <img
+                  src="/gato.png"
+                  alt="Logo Gato PADIA"
+                  className="inline-block align-middle h-[1.3em] md:h-[1.7em] lg:h-[1.3em] mx-2"
+                  style={{ maxHeight: '1.3em', verticalAlign: 'middle' }}
+                />
+                es el semillero multidisciplinario de la 
+                <span className="text-padia-orange"> Universidad San Buenaventura Cali</span>, donde estudiantes apasionados por la tecnología 
+                se unen para explorar, aprender y crear soluciones innovadoras.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Somos una comunidad académica y tecnológica enfocada en la <span className="text-foreground">innovación</span>, 
+                la <span className="text-foreground">investigación</span> y el <span className="text-foreground">aprendizaje colaborativo</span>, 
+                preparando a los profesionales del futuro digital.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { icon: Cpu, label: 'Tecnología', desc: 'De vanguardia' },
+                { icon: Users, label: 'Comunidad', desc: 'Colaborativa' },
+                { icon: Lightbulb, label: 'Innovación', desc: 'Constante' },
+                { icon: GraduationCap, label: 'Formación', desc: 'Integral' },
+              ].map((item, idx) => (
+                <div 
+                  key={idx}
+                  className="glass-card p-4 text-center card-hover group"
+                >
+                  <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-padia-orange/10 flex items-center justify-center group-hover:bg-padia-orange/20 transition-colors">
+                    <item.icon className="w-6 h-6 text-padia-orange" />
+                  </div>
+                  <h4 className="font-display font-semibold text-foreground">{item.label}</h4>
+                  <p className="text-sm text-muted-foreground">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
 
         {/* Integrantes */}
         <div className="mt-20">
-          <h3 className="font-display text-2xl md:text-3xl font-bold mb-8 text-center text-padia-orange">Integrantes</h3>
+          <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 text-center">
+            Integrantes del Semillero
+          </h2>
+          <span className="text-padia-orange font-display text-sm tracking-widest uppercase mb-4 block">
+          
+          </span>
           {(() => {
             const members = [
-              { name: "Carlos Giovanny Hidalgo Suarez", role: "Director del semillero", linkedin: "https://www.linkedin.com/in/giovanny-hidalgo-suarez-95711b1a5/" },
-              { name: "Mariana Cruz", role: "Lider de la 1era celula del Semillero", linkedin: "https://www.linkedin.com/in/mariana-cruz-53a8531b0/" },
-              { name: "Sofia Valencia", role: "Lider de la 2da celula del Semillero", linkedin: "https://www.linkedin.com/in/sofia-valencia-solano-66022a345/" },
+              { name: "Giovanny Hidalgo Suarez", role: "Director", linkedin: "https://www.linkedin.com/in/giovanny-hidalgo-suarez-95711b1a5/" },
+              { name: "Mariana Cruz", role: "Lider célula 1", linkedin: "https://www.linkedin.com/in/mariana-cruz-53a8531b0/" },
+              { name: "Sofia Valencia", role: "Lider célula 2", linkedin: "https://www.linkedin.com/in/sofia-valencia-solano-66022a345/" },
               { name: "Lilian Estefania Maradiago Correa", linkedin: "https://www.linkedin.com/in/lilian-estefania-maradiago-correa-40b423244/" },
               { name: "Valeria Rudas Ruiz", linkedin: "https://www.linkedin.com/in/valeria-rudas-ruiz-941a0715b/" },
               { name: "Juan Sebastián Dosman Bastidas", linkedin: "https://www.linkedin.com/in/sebastiandosman/" },
@@ -119,45 +170,7 @@ export const AboutSection = () => {
         </div>
 
         {/* Main content card */}
-        <div className="glass-card p-8 md:p-12 glow-border relative overflow-hidden">
-          {/* Decorative corner */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-padia-orange/10 to-transparent" />
-          
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                <span className="text-foreground font-semibold">PADIA</span> es el semillero multidisciplinario de la 
-                <span className="text-padia-orange"> Universidad San Buenaventura Cali</span>, donde estudiantes apasionados por la tecnología 
-                se unen para explorar, aprender y crear soluciones innovadoras.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Somos una comunidad académica y tecnológica enfocada en la <span className="text-foreground">innovación</span>, 
-                la <span className="text-foreground">investigación</span> y el <span className="text-foreground">aprendizaje colaborativo</span>, 
-                preparando a los profesionales del futuro digital.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { icon: Cpu, label: 'Tecnología', desc: 'De vanguardia' },
-                { icon: Users, label: 'Comunidad', desc: 'Colaborativa' },
-                { icon: Lightbulb, label: 'Innovación', desc: 'Constante' },
-                { icon: GraduationCap, label: 'Formación', desc: 'Integral' },
-              ].map((item, idx) => (
-                <div 
-                  key={idx}
-                  className="glass-card p-4 text-center card-hover group"
-                >
-                  <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-padia-orange/10 flex items-center justify-center group-hover:bg-padia-orange/20 transition-colors">
-                    <item.icon className="w-6 h-6 text-padia-orange" />
-                  </div>
-                  <h4 className="font-display font-semibold text-foreground">{item.label}</h4>
-                  <p className="text-sm text-muted-foreground">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section>
   );

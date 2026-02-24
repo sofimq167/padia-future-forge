@@ -2,7 +2,7 @@ import { Target, Eye } from 'lucide-react';
 
 export const MissionVisionSection = () => {
   return (
-    <section className="py-24 px-4 relative overflow-hidden">
+    <section className="pt-24 pb-0 px-4 relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-padia-orange/30 to-transparent" />
       <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-padia-orange/5 rounded-full blur-3xl" />

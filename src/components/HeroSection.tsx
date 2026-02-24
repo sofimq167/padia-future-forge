@@ -30,12 +30,18 @@ export const HeroSection = () => {
 
         {/* Main title */}
         <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-bold mb-6 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-          <span className="text-foreground">Semillero</span>
+          <span className="text-foreground">Semillero de Investigación</span>
           <br />
-          <img 
-            src="/logonaranja.png" 
-            alt="Logo Padia" 
-            className="inline-block align-middle h-[1.3em] md:h-[1.7em] lg:h-[1.3em] mx-2" 
+          <img
+            src="/logonaranja.png"
+            alt="Logo Padia"
+            className="inline-block align-middle h-[1.3em] md:h-[1.7em] lg:h-[1.3em] mx-2"
+            style={{ maxHeight: '1.3em', verticalAlign: 'middle' }}
+          />
+          <img
+            src="/gato.png"
+            alt="Gato Padia"
+            className="inline-block align-middle h-[1.3em] md:h-[1.7em] lg:h-[1.3em] mx-2"
             style={{ maxHeight: '1.3em', verticalAlign: 'middle' }}
           />
         </h1>

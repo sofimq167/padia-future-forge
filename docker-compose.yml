@@ -1,11 +1,11 @@
-version: '3.8'
 services:
   padia-app:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3001:80"
+      - "3002:80"
+    # (No bind mounts) The image will contain built assets including public/gato.png
     restart: unless-stopped
     environment:
       - NODE_ENV=production

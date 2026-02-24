@@ -3,7 +3,7 @@ import { Sparkles, ArrowRight } from 'lucide-react';
 
 export const CTASection = () => {
   return (
-    <section className="py-24 px-4 relative overflow-hidden">
+    <section className="pt-24 pb-0 px-4 relative overflow-hidden">
       {/* Background curve and glow */}
       <div className="absolute inset-0">
         <svg

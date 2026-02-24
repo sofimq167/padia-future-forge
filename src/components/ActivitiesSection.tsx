@@ -30,7 +30,7 @@ const activities = [
 
 export const ActivitiesSection = () => {
   return (
-    <section className="py-24 px-4 relative">
+    <section className="pt-24 pb-0 px-4 relative">
       {/* Background elements */}
       <div className="absolute inset-0 circuit-pattern opacity-20" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-padia-orange/5 rounded-full blur-3xl" />
