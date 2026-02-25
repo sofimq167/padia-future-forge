@@ -5,11 +5,14 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3002:80"
-    # (No bind mounts) The image will contain built assets including public/gato.png
+    # production image serves built static files via nginx
     restart: unless-stopped
     environment:
       - NODE_ENV=production
-    # Uncomment if you want to mount local files for development
-    # volumes:
-    #   - ./src:/app/src
-    #   - ./public:/app/public
+
+
+
+# Usage examples:
+#   docker compose up padia-dev   # start dev server (access via localhost:5173)
+#   docker compose up padia-app   # build+run production image (localhost:3002)
+#   docker compose up             # start both services

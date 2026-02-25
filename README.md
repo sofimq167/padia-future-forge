@@ -1,5 +1,8 @@
 # Welcome to your Lovable project
 
+> 🔐 Se agregó una ruta **/admin** que permite gestionar (CRUD) los integrantes del semillero y los proyectos destacados. Los datos se mantienen en `localStorage` y se reflejan automáticamente en la página principal.
+
+
 ## Project info
 
 **URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
@@ -63,6 +66,24 @@ This project is built with:
 ## How can I deploy this project?
 
 Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+
+### Running with Docker
+
+The repository includes a `Dockerfile` and `docker-compose.yml` so the app can be
+built and served entirely inside containers—useful for both development and
+production.
+
+```sh
+# build & serve production image on port 3002
+docker compose up --build padia-app
+
+# start a development container with live reload (Vite) on port 5173
+docker compose up padia-dev
+```
+
+The development service mounts the workspace and runs `npm run dev` inside the
+container; production uses Nginx to serve the built assets. It is recommended to
+use Docker for both environments as requested.
 
 ## Can I connect a custom domain to my Lovable project?
 

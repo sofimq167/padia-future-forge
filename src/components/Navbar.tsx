@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import logoPadia from '../logopadia.png';
@@ -8,6 +9,7 @@ const navLinks = [
   { label: 'Nosotros', href: '#about' },
   { label: 'Actividades', href: '#activities' },
   { label: 'Proyectos', href: '#projects' },
+  { label: 'Admin', href: '/admin' },
 ];
 
 export const Navbar = () => {
@@ -35,14 +37,25 @@ export const Navbar = () => {
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors relative group"
-            >
-              {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-padia-orange group-hover:w-full transition-all duration-300" />
-            </a>
+            link.href.startsWith('/') ? (
+              <Link
+                key={link.label}
+                to={link.href}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors relative group"
+              >
+                {link.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-padia-orange group-hover:w-full transition-all duration-300" />
+              </Link>
+            ) : (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors relative group"
+              >
+                {link.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-padia-orange group-hover:w-full transition-all duration-300" />
+              </a>
+            )
           ))}
         </div>
 
@@ -66,14 +79,25 @@ export const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden glass-card mt-2 mx-4 rounded-xl p-4 animate-fade-in">
           {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="block py-3 text-muted-foreground hover:text-padia-orange transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {link.label}
-            </a>
+            link.href.startsWith('/') ? (
+              <Link
+                key={link.label}
+                to={link.href}
+                className="block py-3 text-muted-foreground hover:text-padia-orange transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.label}
+                href={link.href}
+                className="block py-3 text-muted-foreground hover:text-padia-orange transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.label}
+              </a>
+            )
           ))}
           {/* <Button variant="glow" className="w-full mt-4">
             Únete

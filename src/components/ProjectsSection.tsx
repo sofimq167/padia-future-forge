@@ -1,33 +1,9 @@
 import { ExternalLink, Github } from 'lucide-react';
-
-const projects = [
-  {
-    title: 'Sistema de Predicciónes',
-    description: 'Modelo de machine learning para predicción de deserción estudiantil utilizando técnicas avanzadas de IA.',
-    technologies: ['Python', 'TensorFlow', 'Pandas'],
-    status: 'En desarrollo',
-  },
-  {
-    title: 'Dashboard Analítico',
-    description: 'Plataforma de visualización de datos académicos en tiempo real para la toma de decisiones.',
-    technologies: ['React', 'D3.js', 'Node.js'],
-    status: 'Completado',
-  },
-  {
-    title: 'Chatbot Universitario',
-    description: 'Asistente virtual con procesamiento de lenguaje natural para consultas académicas.',
-    technologies: ['Python', 'NLP', 'FastAPI'],
-    status: 'En desarrollo',
-  },
-  {
-    title: 'Análisis de Sentimientos',
-    description: 'Herramienta de análisis de opiniones en redes sociales usando deep learning.',
-    technologies: ['Python', 'BERT', 'PyTorch'],
-    status: 'Investigación',
-  },
-];
+import { useAdmin } from '@/contexts/AdminContext';
 
 export const ProjectsSection = () => {
+  const { projects } = useAdmin();
+
   return (
     <section className="py-24 px-4 relative">
       {/* Background */}
@@ -50,12 +26,15 @@ export const ProjectsSection = () => {
         </div>
 
         {/* Projects grid */}
-        <div className="grid md:grid-cols-2 gap-6">
-          {projects.map((project, idx) => (
-            <div
-              key={idx}
-              className="glass-card p-6 card-hover group relative overflow-hidden"
-            >
+        {projects.length === 0 ? (
+          <p className="text-center text-muted-foreground">No hay proyectos destacados.</p>
+        ) : (
+          <div className="grid md:grid-cols-2 gap-6">
+            {projects.map((project, idx) => (
+              <div
+                key={idx}
+                className="glass-card p-6 card-hover group relative overflow-hidden"
+              >
               {/* Status badge */}
               <div className="absolute top-4 right-4">
                 <span className={`text-xs px-3 py-1 rounded-full font-medium ${
@@ -91,21 +70,32 @@ export const ProjectsSection = () => {
 
               {/* Action buttons */}
               <div className="flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                <button className="text-sm text-padia-orange hover:text-padia-amber flex items-center gap-1 transition-colors">
+                <a
+                  href={project.moreLink || '#'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-padia-orange hover:text-padia-amber flex items-center gap-1 transition-colors"
+                >
                   <ExternalLink className="w-4 h-4" />
                   Ver más
-                </button>
-                <button className="text-sm text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors">
+                </a>
+                <a
+                  href={project.githubLink || '#'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"
+                >
                   <Github className="w-4 h-4" />
                   Código
-                </button>
+                </a>
               </div>
 
               {/* Bottom glow line */}
               <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-padia-orange/50 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
             </div>
           ))}
-        </div>
+          </div>
+        )}
 
         {/* Coming soon card */}
         <div className="mt-6 glass-card p-8 text-center border-dashed border-2 border-border/50">
